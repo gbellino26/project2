@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>Donation Management</title>-->
+</head>
+<h1>Donation Management</h1>
+
+<body>
+  {% block content %}
+
+    <a href="/">Home</a>
+    {% csrf_token %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Donation Type</th>
+        </tr>
+        {% for donation in donations %}
+        <tr>
+            <th>{{ donation.name }}</th>
+            <th>{{ donation.date }}</th>
+            <th>${{ donation.amount }}</th>
+            <th>{{ donation.donationType }}</th>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endblock %}
+</body>
+</html>

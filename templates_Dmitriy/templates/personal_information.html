@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>Personal Information</title>-->
+</head>
+  <h1>Personal Information</h1>
+<body>
+  {% block content %}
+    <form method="POST" name="user_info">
+        {% csrf_token %}
+        FIRST NAME*: <input type="text" name="firstname" value="ANONYMOUS"><br>
+        LAST NAME*: <input type="text" name="lastname" value="DONOR"><br>
+        CMA #* <input type="text" name="cma"><br>
+        PHONE: <input type="text" name="phone"><br>
+        EMAIL ADDRESS*: <input type="text" name="email" value="{{ request.user.email }}"><br>
+        ADDRESS 1: <input type="text" name="addr1"><br>
+        ADDRESS 2: <input type="text" name="addr2"><br>
+        CITY: <input type="text" name="city"><br>
+        STATE: <input type="text" name="state"><br>
+        ZIP/POSTAL CODE: <input type="text" name="postal"><br>
+        COUNTRY: <input type="text" name="country"><br>
+        URBANIZATION**: <input type="text" name="urb"><br>
+        * (Required fields)
+        ** (If required for international address)<br>
+        <input type="submit" name="continue" value="Continue">
+        <input type="submit" name="cancel" value="Cancel">
+    </form>
+      {% endblock %}
+</body>
+</html>

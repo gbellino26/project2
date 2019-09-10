@@ -1,0 +1,18 @@
+h1{
+  color: red;
+}
+
+title{
+  color:red;
+}
+
+body{
+  background: rgb(156, 210, 230);
+}
+
+#nav_bar ul{
+  list-style: non;
+  padding: 1em 0;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}

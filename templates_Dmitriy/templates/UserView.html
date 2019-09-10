@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>Make a Donation</title>-->
+</head>
+  <h1>Make a Donation</h1>
+<body>
+  {% block content %}
+
+    <a href="/">Home</a>
+    <div>
+        Click on any one Donation Type to continue
+    </div>
+    <form method="POST">
+        {% csrf_token %}
+        {% for dtype in donation_types %}
+            <input type="submit" name="{{ dtype.pk }}" value="{{ dtype.name }}">
+        {% endfor %}
+    </form>
+      {% endblock %}
+</body>
+</html>

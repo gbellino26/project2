@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<title>Title</title>-->
+</head>
+  <h1>Title</h1>
+<body>
+  {% block content %}
+    {% if request.user.is_authenticated and request.user.is_staff %}
+        <a href="/donationapp/UserManagement">User Management</a><br>
+        <a href="/donationapp/DonationManagement">Donation Management</a><br>
+    {% endif %}
+
+    <a href="/donationapp/userview">Make a Donation</a><br>
+    <a href="/logout_page/">Logout</a><br>
+    {% endblock %}
+
+</body>
+</html>
